@@ -1,5 +1,6 @@
 package ru.thewhite.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import ru.thewhite.model.User;
 import ru.thewhite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable(value = "id") Long id){
         userService.delete(id);
-        return "Deleted successful";
+        return "Successfully deleted ";
     }
-
-
 
 }
