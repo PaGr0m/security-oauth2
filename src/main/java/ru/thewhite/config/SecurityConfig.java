@@ -41,8 +41,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        // to be adjusted
+        auth.inMemoryAuthentication().withUser("tomford").password("$2a$04$5MMMzyzLFmehpu4U9LNS5.2JUKNfHZurp5tZTJ4p67920P9oBWhqq").roles("USER");
+        auth.inMemoryAuthentication().withUser("bizzy").password("$2a$04$.LhJklEzYXGpFMsuWf0fTOSU4z3Ueo6aImmfnIXi5Nihv0vktu8qm").roles("ADMIN");
+    }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/users/**").hasRole("USER")
+                .anyRequest().denyAll();
+        http.authorizeRequests()
+                .antMatchers("/users/**").hasRole("ADMIN")
+                .anyRequest().permitAll();
     }
 
     @Bean

@@ -2,4 +2,4 @@ INSERT INTO users (ID, USERNAME, PASSWORD, ROLE)
 VALUES (1, 'tomford', '$2a$04$5MMMzyzLFmehpu4U9LNS5.2JUKNfHZurp5tZTJ4p67920P9oBWhqq', 'USER');
 
 INSERT INTO users (ID, USERNAME, PASSWORD, ROLE)
-VALUES (2, 'bizzy', '$2a$04$.LhJklEzYXGpFMsuWf0fTOSU4z3Ueo6aImmfnIXi5Nihv0vktu8qm', 'JUDGE');
+VALUES (2, 'bizzy', '$2a$04$.LhJklEzYXGpFMsuWf0fTOSU4z3Ueo6aImmfnIXi5Nihv0vktu8qm', 'ADMIN');
