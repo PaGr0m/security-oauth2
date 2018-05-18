@@ -24,7 +24,6 @@ public class User implements Serializable {
     @Column(name = "ROLE", length = 8)
     private Role role;
 
-
     public long getId() {
         return this.id;
     }

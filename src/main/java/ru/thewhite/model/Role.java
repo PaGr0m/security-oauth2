@@ -1,5 +1,8 @@
 package ru.thewhite.model;
 
-public enum Role {
-    USER, JUDGE, ADMIN;
+public enum Role
+{
+    VISITOR,
+    JUDGE,
+    ADMIN;
 }
